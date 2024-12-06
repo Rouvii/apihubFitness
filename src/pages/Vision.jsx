@@ -1,6 +1,19 @@
 import styled from "styled-components";
 
-const VisionText = styled.text``;
+const VisionText = styled.text`
+  font-size: 20px;
+  margin: 20px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  box-shadow: 5px 5px 5px #888888;
+  width: 600px;
+  display: flex;
+  justify-content: center;
+
+`;
 
 const VisionDiv = styled.div`
   width: 300px;
@@ -15,12 +28,16 @@ const DivDiv = styled.div`
 
 `;
 
+const H1 = styled.h1`
+  text-align: center;
+  
+`;
+
 function Vision() {
   return (
     <>
+    <H1>Vision</H1>
       <DivDiv>
-        <h1>Vision</h1>
-
         <VisionDiv>
           <VisionText>
             Fitness API’et skal tilbyde en brugervenlig platform med øvelser

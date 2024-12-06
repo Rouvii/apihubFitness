@@ -1,3 +1,31 @@
+import styled from "styled-components";
+const Table = styled.table`
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+`;
+
+const Th = styled.th`
+  padding: 8px;
+  background-color: ${(props) => props.theme.primary};
+  color: white;
+`;
+
+const Td = styled.td`
+  padding: 8px;
+  border: 1px solid #ddd;
+`;
+
+const Tr = styled.tr`
+  &:nth-child(even) {
+    background-color: ${(props) => props.theme.primary};
+    color: white;
+  }
+`;
+
+
+
 const Endpoint = () => {
   const apiData = [
     {
@@ -82,31 +110,28 @@ const Endpoint = () => {
   return (
     <div>
       <h1>API Documentation</h1>
-      <table
-        border="1"
-        style={{ width: "100%", textAlign: "left", borderCollapse: "collapse" }}
-      >
+      <Table>
         <thead>
           <tr>
-            <th>Method</th>
-            <th>URL</th>
-            <th>Request Body (JSON)</th>
-            <th>Response (JSON)</th>
-            <th>Error (e)</th>
+            <Th>Method</Th>
+            <Th>URL</Th>
+            <Th>Request Body (JSON)</Th>
+            <Th>Response (JSON)</Th>
+            <Th>Error (e)</Th>
           </tr>
         </thead>
         <tbody>
           {apiData.map((entry, index) => (
-            <tr key={index}>
-              <td>{entry.method}</td>
-              <td>{entry.url}</td>
-              <td>{entry.requestBody}</td>
-              <td>{entry.response}</td>
-              <td>{entry.error}</td>
-            </tr>
+            <Tr key={index}>
+              <Td>{entry.method}</Td>
+              <Td>{entry.url}</Td>
+              <Td>{entry.requestBody}</Td>
+              <Td>{entry.response}</Td>
+              <Td>{entry.error}</Td>
+            </Tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 };
